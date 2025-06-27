@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.jpeg" alt="Logo">
+                </a>
+            </div>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-buttons">
+                    <a href="signup.html" class="btn btn-signup active">Sign Up</a>
+                    <a href="login.html" class="btn btn-login">Log In</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="form-container">
+            <h1>Sign Up</h1>
+            <!-- <form> -->
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="Enter Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Your Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm Your Password" required>
+                </div>
+                <button id="signup" class="btn btn-submit">Sign Up</button>
+            <!-- </form> -->
+            <p class="return-link">
+                <a href="index.html">Return to Home Page</a>
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

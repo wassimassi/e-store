@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.jpeg" alt="Logo">
+                </a>
+            </div>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-buttons" id="nav-visitor">
+                    <a href="signup.html" class="btn btn-signup">Sign Up</a>
+                    <a href="login.html" class="btn btn-login">Log In</a>
+                </div>
+                <div class="nav-buttons" id="nav-user">
+                    <h3 style="display: inline;">7</h3>
+                    <div class="cart-icon-container" onclick="window.location.href='cart.html'">
+                        <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V19C17 20.1 16.1 21 15 21H9C7.9 21 7 20.1 7 19V13M17 13H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                    <a href="#" class="btn btn-login" id="logout" style="text-decoration: none;">Log Out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main style="margin-top: 100px;">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1>Shopping Cart</h1>
+                <a href="index.html" class="btn btn-continue-shopping">← Continue Shopping</a>
+            </div>
+            
+            <div id="cart-content">
+                <!-- Cart items will be inserted here -->
+            </div>
+            
+            <div class="cart-empty" id="cart-empty" style="display: none;">
+                <h2>Your cart is empty</h2>
+                <p>Add some products to get started!</p>
+                <a href="index.html" class="btn btn-signup">Start Shopping</a>
+            </div>
+            
+            <div class="cart-summary" id="cart-summary" style="display: none;">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (8%):</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <strong>
+                        <span>Total:</span>
+                        <span id="cart-total">$0.00</span>
+                    </strong>
+                </div>
+                <button class="btn btn-checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+    
+    <script src="js/navigation.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html> 

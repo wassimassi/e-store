@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.jpeg" alt="Logo">
+                </a>
+            </div>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-buttons">
+                    <a href="signup.html" class="btn btn-signup">Sign Up</a>
+                    <a href="login.html" class="btn btn-login active">Log In</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="form-container">
+            <h1>Log In</h1>
+            <!-- <form> -->
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter Your Password" required>
+                </div>
+                <button id="login" class="btn btn-submit">Log In</button>
+            <!-- </form> -->
+            <p class="return-link">
+                <a href="index.html">Return to Home Page</a>
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+    <script src="js/navigation.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
