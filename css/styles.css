@@ -136,6 +136,14 @@ body {
   display: none;
 }
 
+/* Visitor navigation styling */
+#nav-visitor {
+  display: flex; /* Visible by default for first-time visitors */
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
 /* User navigation styling */
 #nav-user {
   display: none; /* Hidden by default, shown by JavaScript when user is logged in */
@@ -149,6 +157,11 @@ body {
   display: flex;
 }
 
+/* Hide visitor nav when user is logged in */
+#nav-visitor.hide {
+  display: none;
+}
+
 #nav-user h3 {
   margin: 0;
   display: inline-block;
@@ -160,7 +173,7 @@ body {
   flex-direction: row;
 }
 
-.navbar #nav-user {
+.navbar #nav-user.show {
   display: flex;
   flex-direction: row;
 }
