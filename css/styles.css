@@ -136,7 +136,7 @@ body {
   display: none;
 }
 
-/* Visitor navigation styling */
+/* Visitor navigation styling - Default state for non-logged in users */
 #nav-visitor {
   display: flex; /* Visible by default for first-time visitors */
   flex-direction: row;
@@ -144,22 +144,22 @@ body {
   gap: 16px;
 }
 
-/* User navigation styling */
+/* Hide visitor nav when user is logged in */
+#nav-visitor.hide {
+  display: none !important;
+}
+
+/* User navigation styling - Hidden by default */
 #nav-user {
-  display: none; /* Hidden by default, shown by JavaScript when user is logged in */
+  display: none !important; /* Hidden by default, only shown when user is logged in */
   flex-direction: row;
   align-items: center;
   gap: 16px;
 }
 
-/* When user nav is visible */
+/* Show user nav when user is logged in */
 #nav-user.show {
-  display: flex;
-}
-
-/* Hide visitor nav when user is logged in */
-#nav-visitor.hide {
-  display: none;
+  display: flex !important;
 }
 
 #nav-user h3 {

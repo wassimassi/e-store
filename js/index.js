@@ -1,37 +1,5 @@
-// Get the login form element
-var visitor = document.getElementById("nav-visitor")
-var user = document.getElementById("nav-user")
-var userName = document.querySelector("#nav-user h3")
+// Get navigation elements
 var logoutBtn = document.getElementById("logout")
-var cartCountElement = document.getElementById("cart-count")
-
-// Debug: Check if elements are found
-console.log("Debug - Elements found:");
-console.log("visitor element:", visitor);
-console.log("user element:", user);
-console.log("userName element:", userName);
-console.log("logoutBtn element:", logoutBtn);
-
-// Function to update cart count display
-function updateCartCount() {
-  const currentUserName = localStorage.getItem("Name")
-  if (!currentUserName) {
-    cartCountElement.textContent = "0"
-    cartCountElement.classList.add("hidden")
-    return
-  }
-
-  const cart = JSON.parse(localStorage.getItem("cart")) || []
-  const userCartItems = cart.filter(item => item.userName === currentUserName)
-  const totalItems = userCartItems.reduce((total, item) => total + item.quantity, 0)
-  
-  cartCountElement.textContent = totalItems
-  if (totalItems > 0) {
-    cartCountElement.classList.remove("hidden")
-  } else {
-    cartCountElement.classList.add("hidden")
-  }
-}
 
 // Function to calculate total cart value
 function calculateCartTotal(userName) {
