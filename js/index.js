@@ -18,24 +18,7 @@ function getUserCartItems() {
   return cart.filter(item => item.userName === currentUserName)
 }
 
-// Debug: Check what's in localStorage
-console.log("Debug - localStorage Name:", localStorage.getItem("Name"));
-
-if (localStorage.getItem("Name")) {
-  // User is logged in
-  console.log("User is logged in, showing user nav");
-  user.classList.add('show')
-  visitor.style.display = 'none'
-  userName.innerHTML = localStorage.getItem("Name")
-  // Update cart count when user is logged in
-  updateCartCount()
-}
-else {
-  // User is not logged in
-  console.log("User is not logged in, showing visitor nav");
-  user.classList.remove('show')
-  visitor.style.display = "block"
-}
+// Navigation state is now handled by navigation.js
 
 logoutBtn.addEventListener("click", function (event) {
   event.preventDefault();

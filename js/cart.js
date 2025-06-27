@@ -1,25 +1,16 @@
 // Cart page functionality
-var visitor = document.getElementById("nav-visitor")
-var user = document.getElementById("nav-user")
-var userName = document.querySelector("#nav-user h3")
 var logoutBtn = document.getElementById("logout")
-var cartCountElement = document.getElementById("cart-count")
 
-// Initialize page
-if (localStorage.getItem("Name")) {
-    // User is logged in
-    user.classList.add('show')
-    visitor.style.display = 'none'
-    userName.innerHTML = localStorage.getItem("Name")
-    updateCartCount()
-    loadCartItems()
-} else {
-    // User is not logged in
-    user.classList.remove('show')
-    visitor.style.display = "block"
-    // Redirect to login if not logged in
-    window.location.href = "login.html"
-}
+// Initialize page - navigation state is handled by navigation.js
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem("Name")) {
+        // User is logged in - load cart
+        loadCartItems()
+    } else {
+        // User is not logged in - redirect to login
+        window.location.href = "login.html"
+    }
+});
 
 // Logout functionality
 logoutBtn.addEventListener("click", function (event) {
@@ -34,26 +25,7 @@ function logout() {
     }, 1000)
 }
 
-// Function to update cart count display
-function updateCartCount() {
-    const currentUserName = localStorage.getItem("Name")
-    if (!currentUserName) {
-        cartCountElement.textContent = "0"
-        cartCountElement.classList.add("hidden")
-        return
-    }
-
-    const cart = JSON.parse(localStorage.getItem("cart")) || []
-    const userCartItems = cart.filter(item => item.userName === currentUserName)
-    const totalItems = userCartItems.reduce((total, item) => total + item.quantity, 0)
-    
-    cartCountElement.textContent = totalItems
-    if (totalItems > 0) {
-        cartCountElement.classList.remove("hidden")
-    } else {
-        cartCountElement.classList.add("hidden")
-    }
-}
+// Cart count function is now handled by navigation.js
 
 // Function to load and display cart items
 function loadCartItems() {
